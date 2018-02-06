@@ -1,0 +1,323 @@
+﻿<Page x:Class="Project.myPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="myPage">
+    <ScrollViewer>
+    <StackPanel >
+        <DockPanel>
+            <TextBlock Name="txtOutput" Text="{Binding ItemData}" FontSize="16" TextWrapping="Wrap" DockPanel.Dock="Right" HorizontalAlignment="Left" Width="700"/>
+            <Image x:Name="ItemImg" Width="140" Height="140"  Margin="10" HorizontalAlignment="Left" />
+        </DockPanel>
+        <DockPanel Margin="50,50,50,0" Background="Gray">
+            <Label FontSize="20" Foreground="White" >Country</Label>
+            <TextBlock Text="{Binding ItemCountry}" FontSize="20" Padding="200,5,0,5" Foreground="White" >
+            </TextBlock>
+        </DockPanel>
+        <DockPanel Margin="50,10,50,0" Background="Gray">
+            <Label FontSize="20" Foreground="White" >Age</Label>
+            <TextBlock Text="{Binding ItemAge}" FontSize="20" Padding="220,5,0,5" Foreground="White" >
+            </TextBlock>
+        </DockPanel>
+        <DockPanel Margin="50,10,50,0" Background="Gray">
+            <Label FontSize="20" Foreground="White" >Born</Label>
+            <TextBlock Text="{Binding ItemBorn}" FontSize="20" Padding="220,5,0,5" Foreground="White" >
+            </TextBlock>
+        </DockPanel>
+        <DockPanel Margin="50,10,50,0" Background="Gray">
+            <Label FontSize="20" Foreground="White" >Batting Style</Label>
+            <TextBlock Text="{Binding ItemBat}" FontSize="20" Padding="150,5,0,5" Foreground="White" >
+            </TextBlock>
+        </DockPanel>
+        <DockPanel Margin="50,10,50,0" Background="Gray">
+            <Label FontSize="20" Foreground="White" >BowlingStyle</Label>
+            <TextBlock Text="{Binding ItemBowl}" FontSize="20" Padding="150,5,0,5" Foreground="White" >
+            </TextBlock>
+        </DockPanel>
+
+
+            <TextBlock Text="Batting Performance" Background="Gray" Foreground="White" Margin="50,10,50,0"
+                       Padding="150,5,0,5" FontSize="20"></TextBlock>
+
+            <DataGrid Name="CustomerGrid"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding Players}"
+                  AlternatingRowBackground="Gainsboro"
+                  AlternationCount="2"
+                  CanUserAddRows="False"
+                  Margin="50,5,50,0"
+                  >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="League"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding league}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="50"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding fifty}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="100"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding hundred}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="4's"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding four}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="6's"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding six}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="St"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding st}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Ct"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ct}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Ave"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ave}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="HS"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding high}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Runs"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding runs}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="NO"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding notout}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Match"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding match}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+            <TextBlock Text="Bowling Performance" Background="Gray" Foreground="White" Margin="50,10,50,0"
+                       Padding="150,5,0,5" FontSize="20"></TextBlock>
+
+            <DataGrid Name="CustomerGrid2"
+                  AutoGenerateColumns="False"
+                  ItemsSource="{Binding Players}"
+                  AlternatingRowBackground="Gainsboro"
+                  AlternationCount="2"
+                  CanUserAddRows="False"
+                  Margin="50,5,50,0"
+                  >
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="League"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding league}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="10"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding tenw}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="5w"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding fivew}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="4w"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding fourw}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="SR"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding sr}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Econ"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding econ}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Ave"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding aveb}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="BBM"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding bbm}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="BBI"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding bbi}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Wkts"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding wktsb}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Runs"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding runsb}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Balls"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding balls}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="Match"
+                                        Width="*"
+                                        IsReadOnly="True">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding matchb}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </ScrollViewer>
+</Page>
